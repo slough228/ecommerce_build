@@ -57,7 +57,7 @@ def home_page(request):
         "content": "home content",
     }
 
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         context["premium_content"] = "YES"
     return render(request, "home_page.html", context)
 
@@ -77,6 +77,7 @@ def contact_page(request):
         "title": "contact TITLE",
         "content": "contact content",
         "form": contact_form
+
     }
     if contact_form.is_valid():
         print(contact_form.cleaned_data)
