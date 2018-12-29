@@ -56,3 +56,5 @@ docs/_build/
 # PyBuilder
 target/
 /src/db.sqlite3
+/src/products/migrations/0012_product_timestamp.py
+*.gz
