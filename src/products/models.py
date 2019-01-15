@@ -27,6 +27,9 @@ class ProductManager(models.Manager):
     def featured(self):
         return self.get_queryset().filter(featured=True)
 
+    # def all(self):
+        # return self.get_queryset().active()
+
     def get_by_id(self, id):
         qs = self.get_queryset().filter(id=id)
         if qs.count() == 1:
