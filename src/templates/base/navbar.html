@@ -3,42 +3,46 @@
 {% url 'products:list' as products_url %}
 {% url 'login' as login_url %}
 {% url 'register' as register_url %}
+{% url 'about' as about_url %}
 
 {% load static %}
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
-    <div class="container">
+<div class="container">
+<nav class="navbar navbar-expand-lg navbar-light mb-3" style="background-color>:#ffffff"><!-- 187, 206, 219 -->
         <a class="navbar-brand" href="{{ home_url }}">
-            <img src="{% static 'img/beach_resize.jpg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
-            {% if brand_name %} {{ brand_name }} {% else %} Navbar {%endif%}
+            <img src="{% static 'img/memullinart/gif/Memullin-logo.gif' %}" width="100" height="30" class="d-inline-block align-top" alt="">
+            <!--             {% if brand_name %} {{ brand_name }} {% else %} Navbar {%endif%} -->
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                <li class="nav-item {% if request.path == home_url %}active{% endif %}">
+                <li class="nav-item my-auto {% if request.path == home_url %}active{% endif %}">
                     <a class="nav-link" href="{{ home_url }}" }">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item {% if request.path == contact_url %}active{% endif %}">
+                <li class="nav-item my-auto {% if request.path == contact_url %}active{% endif %}">
                     <a class="nav-link" href="{{ contact_url }}">Contact</a>
                 </li>
-                <li class="nav-item {% if request.path == products_url %}active{% endif %}">
+                <li class="nav-item my-auto {% if request.path == products_url %}active{% endif %}">
                     <a class="nav-link" href="{{ products_url }}">Products</a>
                 </li>
+                <li class="nav-item my-auto {% if request.path == about_url %}active{% endif %}">
+                    <a class="nav-link" href="{{ about_url }}" }">About <span class="sr-only">(current)</span></a>
+                </li>
                 {% if request.user.is_authenticated %}
-                <li class="nav-item {% if request.path == login_url %}active{% endif %}">
+                <li class="nav-item my-auto {% if request.path == login_url %}active{% endif %}">
                     <a class="nav-link" href="{{ login_url }}">Logout</a>
                 </li>
                 {% else %}
-                <li class="nav-item {% if request.path == login_url %}active{% endif %}">
+                <li class="nav-item my-auto {% if request.path == login_url %}active{% endif %}">
                     <a class="nav-link" href="{{ login_url }}">Login</a>
                 </li>
-                <li class="nav-item {% if request.path == login_url %}active{% endif %}">
+                <li class="nav-item my-auto {% if request.path == login_url %}active{% endif %}">
                     <a class="nav-link" href="{{ register_url }}">Register</a>
                 </li>
                 {% endif %}
-                <li class="nav-item dropdown">
+                <li class="nav-item my-auto dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Dropdown link
                     </a>
@@ -48,8 +52,8 @@
                         <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </li>
-                {% include 'search/snippets/search-form.html' %}
             </ul>
+            {% include 'search/snippets/search-form.html' %}
         </div>
-    </div>
 </nav>
+</div>

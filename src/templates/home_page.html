@@ -7,23 +7,41 @@
 {% include 'base/carousel.html' %}
 
 <div class="text-center text-dark">
-    <h1>{{ title }}</h1>
-    <p>asdf</p>
+    <h1 class="display-3">{{ title }}
+        <br>
+        <h4 class="text-muted">{{ desc }}</h4>
+    </h1>
 </div>
-    <div class="row">
-        <div class="col">
-            <img src="{% static 'img/Cuernos.jpg' %}" class="img-fluid" />
-            <p>{{ content }}</p>
-        </div>
-    </div>
 
-    {% if request.user.is_authenticated %}
-    <div class="row">
-        <div class="col">
-            <h1>Premium</h1>
-            {{ premium_content }}
-        </div>
+<!-- 7 galleries... -->
+{% include 'base/galleries_bar.html' %}
+
+
+<p>{{ content }}</p>
+<hr>
+
+<div class="row">
+    <div class="col-8">Most Recent Painting
+        <img src="{% static 'img/memullinart/o_print_arno.jpg' %}" class="img-fluid" />
     </div>
-    {% endif %}
+    <div class="col-4 my-auto mr-auto">Exampel of this painting in notecard form
+        <img src="{% static 'img/memullinart/o_card_arno.jpg' %}" class="img-fluid" />
+    </div>
+</div>
+<hr>
+
+<div class="row">
+    <div class="col-12">Available locally at</div>
+
+</div>
+
+{% if request.user.is_authenticated %}
+<div class="row">
+    <div class="col">
+        <h1>Premium</h1>
+        {{ premium_content }}
+    </div>
+</div>
+{% endif %}
 
 {% endblock %}

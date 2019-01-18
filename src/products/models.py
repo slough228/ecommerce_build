@@ -23,6 +23,16 @@ def upload_image_path(instance, filename):
                                                              final_filename=final_filename)
 
 
+class Gallery(models.Model):
+    title = models.CharField(max_length=120)
+    description = models.TextField()
+    featured_image = models.ImageField(
+        upload_to=upload_image_path, null=True, blank=False)
+
+    def __str__(self):
+        return self.title
+
+
 class ProductManager(models.Manager):
     def featured(self):
         return self.get_queryset().filter(featured=True)
@@ -47,6 +57,7 @@ class Product(models.Model):
     featured = models.BooleanField(default=False)
     active = models.BooleanField(default=True)
     timestamp = models.DateField(auto_now_add=True)
+    gallery = models.ForeignKey(Gallery, on_delete=models.CASCADE)
 
     objects = ProductManager()
 

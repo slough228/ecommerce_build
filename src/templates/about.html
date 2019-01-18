@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="text-center text-dark">
+        <h1>{{ title }}</h1>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>{{ content }}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-8">
+            <p>Mary Mullin has been drawing and painting for her entire professional life, working as an illustrator, graphic designer, and art director. Much of her work, like the drawings on this website, is created en plein air, capturing a specific place on a specific day. She holds a Bachelor of Fine Arts degree from Manhattanville College, and studied also at the Accademia di Belle Arti di Roma, Italy, and Parsons School of Design in New York City.</p>
+            <p>The artist is available for private commissions. Contact her at <a href="mailto:memulin@memullinart.com">memullin@memullinart.com</a>.</p>
+        </div>
+        <div class="col-4">
+            <img src="{% static 'img/memullinart/portrait_of_an_artist.jpg' %}" class="img-fluid z-depth-1" alt="Portrait of Mary">
+        </div>
+    </div>
+        <div class="row">
+            <div class="col">
+                <h5>The West Point Connection</h5>
+                <p>The paintings that appear in the West Point Gallery were completed on-site at The United States Military Academy over the course of eight years, while four of the artist’s own children were cadets. (The fifth is married to a graduate of the United States Naval Academy.) The artist’s husband and father-in-law are graduates of West Point as well.</p>
+                <p>Comparatively few of cadets’ family members and friends, especially those living at great distances, ever get the chance to see West Point from the inside. Realizing this, the artist began work on a series of watercolors intended to show the striking architecture and landscape that frame daily life during the cadets’ four years at West Point. These works are the result of that effort.</p>
+
+                <p>The artist’s purpose was to create beautiful and affordable works of art of the United States Military Academy for cadets, graduates, their families, and friends.</p>
+
+                <p>Pictures from sites other than West Point include Boston, the greater USA, travels in Europe, and commissions. Pictures from the Naval Academy in Annapolis, MD will start appearing in Spring 2017.</p>
+
+                <p>Members of all branches of the Armed Services receive a discount of 10% on all prints. In addition, for each print sold $10.00 will be contributed to programs to benefit wounded service members and their families, such as the Yellow Ribbon Fund in Washington D.C.</p>
+
+                <p>A selection of prints and notecards are available at the (DUSA) Gift Store and West Point AOG Gift Shop. All images are available direct from the artist at memullin@memullinart.com.</p>
+
+            </div>
+        </div>
+    </div>
+    {% endblock %}

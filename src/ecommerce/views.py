@@ -53,7 +53,8 @@ def register_page(request):
 
 def home_page(request):
     context = {
-        "title": "Home TITLE",
+        "title": "MEMullinArt",
+        "desc": "Watercolor Prints & Notecards",
         "content": "home content",
     }
 
@@ -65,10 +66,11 @@ def home_page(request):
 def about_page(request):
 
     context = {
-        "title": "about TITLE",
-        "content": "about content"
+        "title": "About The Artist",
+        "content": "About the Artist"
     }
-    return render(request, "home_page.html", context)
+
+    return render(request, "about.html", context)
 
 
 def contact_page(request):
