@@ -21,10 +21,9 @@ class SearchProductView(ListView):
         method_dict = request.GET
         query = method_dict.get('q', None)
         if query is not None:
-            return Product.objects.filter(title__icontains=query)
+            return Product.objects.search(query)
         """
         __icontans = field contains this
         __iexact = is exactly this.
         """
-        print("RETURNING featured")
         return Product.objects.featured()

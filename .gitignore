@@ -58,3 +58,12 @@ target/
 /src/db.sqlite3
 /src/products/migrations/0012_product_timestamp.py
 *.gz
+/.DS_Store
+/activate/bin/autopep8
+/activate/bin/black
+/activate/bin/blackd
+/activate/bin/iptest
+/activate/bin/iptest3
+/activate/bin/ipython
+/activate/bin/ipython3
+/activate/bin/pycodestyle

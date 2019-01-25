@@ -5,7 +5,7 @@
     <div class="col">
         <h4>{{ object.title }}</h4>
         {{ object.timestamp | date  }}
-        <h7>{{ object.desc | linebreaks }}</h7>
+        <h7>{{ object.description | linebreaks }}</h7>
         {% if object.image %}
         <img  src="{{object.image.url}}" class="img-fluid">
         {% endif %}
