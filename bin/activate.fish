@@ -36,7 +36,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/samuellough/gits/python-ecommerce/ecommerce"
+set -gx VIRTUAL_ENV "/Users/samuellough/gits/ecommerce_build/ecommerce"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

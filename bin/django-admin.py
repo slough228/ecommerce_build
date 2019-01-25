@@ -1,4 +1,4 @@
-#!/Users/samuellough/gits/python-ecommerce/ecommerce/bin/python3.6
+#!/Users/samuellough/gits/ecommerce_build/ecommerce/bin/python3.6
 from django.core import management
 
 if __name__ == "__main__":
