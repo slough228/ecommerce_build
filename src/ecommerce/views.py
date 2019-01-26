@@ -52,6 +52,7 @@ def register_page(request):
 
 
 def home_page(request):
+    print(request.session.get("first_name", "unknown"))
     context = {
         "title": "MEMullinArt",
         "desc": "Watercolor Prints & Notecards",
