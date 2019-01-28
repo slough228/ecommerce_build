@@ -4,6 +4,7 @@
 {% url 'login' as login_url %}
 {% url 'register' as register_url %}
 {% url 'about' as about_url %}
+{% url 'cart:home' as cart_url %}
 
 {% load static %}
 <div class="container">
@@ -38,20 +39,23 @@
                 <li class="nav-item my-auto {% if request.path == login_url %}active{% endif %}">
                     <a class="nav-link" href="{{ login_url }}">Login</a>
                 </li>
-                <li class="nav-item my-auto {% if request.path == login_url %}active{% endif %}">
+                <li class="nav-item my-auto {% if request.path == register_url %}active{% endif %}">
                     <a class="nav-link" href="{{ register_url }}">Register</a>
                 </li>
                 {% endif %}
-                <li class="nav-item my-auto dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown link
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
+                <li class="nav-item my-auto {% if request.path == cart_url %}active{% endif %}">
+                    <a class="nav-link" href="{{ cart_url }}">{{request.session.cart_items}} <i class="fas fa-shopping-cart"></i> </a>
                 </li>
+                <!-- <li class="nav-item my-auto dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Dropdown link
+                     </a>
+                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item" href="#">Action</a>
+                     <a class="dropdown-item" href="#">Another action</a>
+                     <a class="dropdown-item" href="#">Something else here</a>
+                     </div>
+                     </li> -->
             </ul>
             {% include 'search/snippets/search-form.html' %}
         </div>
