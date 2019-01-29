@@ -2,18 +2,22 @@
 {% url 'contact' as contact_url %}
 {% url 'products:list' as products_url %}
 {% url 'login' as login_url %}
+{% url 'logout' as logout_url %}
 {% url 'register' as register_url %}
 {% url 'about' as about_url %}
 {% url 'cart:home' as cart_url %}
 
 {% load static %}
 <div class="container">
-<nav class="navbar navbar-expand-lg navbar-light mb-3" style="background-color>:#ffffff"><!-- 187, 206, 219 -->
+    <nav class="navbar navbar-expand-lg navbar-light mb-3" style="background-color>:#ffffff">
+        <!-- 187, 206, 219 -->
         <a class="navbar-brand" href="{{ home_url }}">
-            <img src="{% static 'img/memullinart/gif/Memullin-logo.gif' %}" width="100" height="30" class="d-inline-block align-top" alt="">
+            <img src="{% static 'img/memullinart/gif/Memullin-logo.gif' %}" width="100" height="30" class="d-inline-block align-top"
+                alt="">
             <!--             {% if brand_name %} {{ brand_name }} {% else %} Navbar {%endif%} -->
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -32,8 +36,8 @@
                     <a class="nav-link" href="{{ about_url }}" }">About <span class="sr-only">(current)</span></a>
                 </li>
                 {% if request.user.is_authenticated %}
-                <li class="nav-item my-auto {% if request.path == login_url %}active{% endif %}">
-                    <a class="nav-link" href="{{ login_url }}">Logout</a>
+                <li class="nav-item my-auto {% if request.path == logout_url %}active{% endif %}">
+                    <a class="nav-link" href="{{ logout_url }}">Logout</a>
                 </li>
                 {% else %}
                 <li class="nav-item my-auto {% if request.path == login_url %}active{% endif %}">
@@ -44,7 +48,8 @@
                 </li>
                 {% endif %}
                 <li class="nav-item my-auto {% if request.path == cart_url %}active{% endif %}">
-                    <a class="nav-link" href="{{ cart_url }}">{{request.session.cart_items}} <i class="fas fa-shopping-cart"></i> </a>
+                    <a class="nav-link" href="{{ cart_url }}">{{request.session.cart_items}} <i class="fas fa-shopping-cart"></i>
+                    </a>
                 </li>
                 <!-- <li class="nav-item my-auto dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -59,5 +64,5 @@
             </ul>
             {% include 'search/snippets/search-form.html' %}
         </div>
-</nav>
+    </nav>
 </div>
