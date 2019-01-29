@@ -68,3 +68,12 @@ target/
 /activate/bin/ipython3
 /activate/bin/pycodestyle
 /.!75795!.DS_Store
+.vscode/settings.json
+src/.DS_Store
+src/static_my_proj/img/.DS_Store
+src/static_my_proj/.DS_Store
+src/static_my_proj/.DS_Store
+src/static_my_proj/.DS_Store
+src/static_my_proj/img/.DS_Store
+static_cdn/.DS_Store
+static_cdn/media_root/.DS_Store
