@@ -40,3 +40,7 @@ class RegisterForm(forms.Form):
             raise forms.ValidationError("PASSWORDS MUST MATCH")
 
         return data
+
+
+class GuestForm(forms.Form):
+    email = forms.EmailField()
